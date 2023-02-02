@@ -1,10 +1,16 @@
 export class Validator {
     validateUsername(username){
-        if (/\d\d\d/.test(username)){
-            return false;
+
+        const exeptThreeNumbersInRow = /\d{4}/;
+        const wordAndNumberAccept = /\w*/;
+        const dashAccept = /-*/;
+        const wordInStart = /^[a-z]/;
+        const wordInEnd = /[a-z]$/;
+
+        if (wordInStart.test(username) && wordAndNumberAccept.test(username) && dashAccept.test(username) && wordInEnd.test(username) && !exeptThreeNumbersInRow.test(username)){
+            return true;
         }
-        let a = /^[a-z][-_\w\d]*[a-z]$/.test(username);
-        return a;
+        return false;
     }
 
 }

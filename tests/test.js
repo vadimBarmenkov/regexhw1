@@ -22,5 +22,5 @@ test('validator test 5', () => {
 })
 
 test('validator test 6', () => {
-    expect(validator.validateUsername('user123_ht-v')).toBe(false);
+    expect(validator.validateUsername('user1234_ht-v')).toBe(false);
 })
